@@ -8,7 +8,7 @@ public class Block : MonoBehaviour
 
     private int state;
 
-    public int cropIdx;
+    private int cropIdx;
 
     private void Awake()
     {
@@ -26,9 +26,16 @@ public class Block : MonoBehaviour
         }
     }
 
-    private void Update()
+    public void ChangeCrop(int idx)
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-            NextState();
+        cropIdx = idx;
+        state = 0;
+
+        sr.sprite = CropManager.instance.crops[idx].pattern[0];
+    }
+
+    private void OnMouseDown()
+    {
+        OptionsCrop.instance.Open(this);
     }
 }
