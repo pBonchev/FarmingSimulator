@@ -34,7 +34,7 @@ public class Block : MonoBehaviour
         sr.sprite = CropManager.instance.crops[idx].pattern[0];
     }
 
-    private void OnMouseDown()
+    public void Click()
     {
         OptionsCrop.instance.Open(this);
     }

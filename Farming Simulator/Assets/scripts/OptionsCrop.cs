@@ -18,7 +18,7 @@ public class OptionsCrop : MonoBehaviour
     {
         host = from;
 
-        transform.position = from.transform.position;
+        transform.position = host.transform.position;
 
         gameObject.SetActive(true);
     }
@@ -27,5 +27,16 @@ public class OptionsCrop : MonoBehaviour
     {
         host = null;
         gameObject.SetActive(false);
+    }
+
+    public void PlantSeed(int seedIdx)
+    {
+        if (host == null) 
+        {
+            Debug.LogError("no host");
+            return;
+        }
+
+        host.ChangeCrop(seedIdx);
     }
 }

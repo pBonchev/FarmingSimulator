@@ -28,9 +28,15 @@ public class MapGenerator : MonoBehaviour
         {
             for (int j = 0; j < heigth; j++)
             {
-                Block bl = Instantiate(block, new Vector3(i, j, 0f), Quaternion.identity, this.transform).GetComponent<Block>();
+                Block bl = Instantiate(block, new Vector3(i, j, -1f), Quaternion.identity, this.transform).GetComponent<Block>();
                 bl.ChangeCrop(0);
+                //if (i % 2 == j % 2) bl.NextState();
             }
         }
+    }
+
+    public void Check()
+    {
+        Debug.Log("yess");
     }
 }
