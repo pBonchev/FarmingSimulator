@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
             {
                 block.Click();
             }
+            else OptionsCrop.instance.Close();
         }
     }
 }
