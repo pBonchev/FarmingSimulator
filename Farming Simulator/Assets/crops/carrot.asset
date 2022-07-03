@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: carrot
   m_EditorClassIdentifier: 
   pattern:
-  - {fileID: 21300000, guid: 69502e9c3f9153449b02bbd5f2cf2c4f, type: 3}
-  - {fileID: 21300000, guid: 2dac6f1ccbc680549b96030f023c22f8, type: 3}
+  - {fileID: 21300000, guid: 048ad24a20f04664584237f2046be55e, type: 3}
   - {fileID: 21300000, guid: 33f8b9decb63fd34a91022c5a6fdeefd, type: 3}
   - {fileID: 21300000, guid: 529f2e5d4f4148442b6f28127ec675fc, type: 3}
   - {fileID: 21300000, guid: d61068913d780b845aeb9b45f3089549, type: 3}

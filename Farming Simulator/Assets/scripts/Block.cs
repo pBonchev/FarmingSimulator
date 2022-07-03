@@ -6,6 +6,10 @@ public class Block : MonoBehaviour
 {
     private SpriteRenderer sr;
 
+    public bool ploughed = false;
+    public bool watered = false;
+    public bool planted = false;
+
     private int state;
 
     private int cropIdx;
@@ -18,6 +22,8 @@ public class Block : MonoBehaviour
     public void NextState()
     {
         if (cropIdx == -1) return;
+
+        if (ploughed && !watered) return;
 
         if (state < CropManager.instance.crops[cropIdx].pattern.Length - 1)
         {
@@ -37,5 +43,10 @@ public class Block : MonoBehaviour
     public void Click()
     {
         OptionsCrop.instance.Open(this);
+    }
+
+    public bool Ready()
+    {
+        return (state == CropManager.instance.crops[cropIdx].pattern.Length - 1);
     }
 }

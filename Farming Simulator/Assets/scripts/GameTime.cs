@@ -21,6 +21,22 @@ public class GameTime : MonoBehaviour
     public void ChangeTime()
     {
         for (int i = 0; i < blocks.Count; i++)
+        {
+            if (blocks[i].ploughed && !blocks[i].watered)
+            {
+                blocks[i].ChangeCrop(0);
+                blocks[i].ploughed = false;
+                continue;
+            }
+
+            if (blocks[i].watered && !blocks[i].planted)
+            {
+                blocks[i].ChangeCrop(1);
+                blocks[i].watered = false;
+                continue;
+            }
+
             blocks[i].NextState();
+        }
     }
 }
